@@ -13,9 +13,13 @@
    
    
    #to redirect root to subdirectory in server
+
    create .htaccess file and paste below code
    
    RewriteEngine on
+   
    RewriteCond %{HTTP_HOST} example\.com [NC]
+   
    RewriteCond %{REQUEST_URI} ^/$
+   
    RewriteRule ^(.*)$ /blog/$1 [L]
