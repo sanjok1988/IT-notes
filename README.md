@@ -12,7 +12,7 @@
    2. php7.1 artisan config:clear
    
    
-   #to redirect root to subdirectory in server
+   # to redirect root to subdirectory in server
 
    create .htaccess file and paste below code
    
