@@ -10,3 +10,12 @@
 3. For terminal composer run
    1. php7.1 composer.phar update
    2. php7.1 artisan config:clear
+   
+   
+   #to redirect root to subdirectory in server
+   create .htaccess file and paste below code
+   
+   RewriteEngine on
+   RewriteCond %{HTTP_HOST} example\.com [NC]
+   RewriteCond %{REQUEST_URI} ^/$
+   RewriteRule ^(.*)$ /blog/$1 [L]
