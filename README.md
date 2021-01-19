@@ -25,7 +25,7 @@
    RewriteRule ^(.*)$ /blog/$1 [L]
 ```
 
-
+# To Renew Jetbrains app with out licence
 ```bash
 REM Delete eval folder with licence key and options.xml which contains a reference to it
 for %%I in ("WebStorm", "IntelliJ", "CLion", "Rider", "Pycharm") do (
