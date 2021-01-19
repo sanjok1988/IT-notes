@@ -13,7 +13,7 @@
    
    
    # to redirect root to subdirectory in server
-
+```bash
    create .htaccess file and paste below code
    
    RewriteEngine on
@@ -23,3 +23,22 @@
    RewriteCond %{REQUEST_URI} ^/$
    
    RewriteRule ^(.*)$ /blog/$1 [L]
+```
+
+
+```bash
+REM Delete eval folder with licence key and options.xml which contains a reference to it
+for %%I in ("WebStorm", "IntelliJ", "CLion", "Rider", "Pycharm") do (
+    for /d %%a in ("%USERPROFILE%\.%%I*") do (
+        rd /s /q "%%a/config/eval"
+        del /q "%%a\config\options\other.xml"
+    )
+)REM Delete Permanent User Id and Permanent Device ID
+del /q "%APPDATA%\JetBrains\PermanentDeviceId"
+del /q "%APPDATA%\JetBrains\PermanentUserId"REM Delete all eval folders and options.xml from appdata
+for /f %%f in ('dir /ad /b /r %APPDATA%\JetBrains\') do (
+    rd /s /q "%APPDATA%\JetBrains\%%f\eval"
+    del "%APPDATA%\JetBrains\%%f\options\other.xml"
+)REM delete registry
+reg delete "HKEY_CURRENT_USER\Software\JavaSoft" /f
+```
